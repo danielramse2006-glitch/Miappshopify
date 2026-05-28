@@ -6,9 +6,98 @@
         "title": "Maquillaje",
         "grid_cols": "3"
       }
+    },
+    "video-collage": {
+      "type": "video-collage",
+      "blocks": {
+        "video-1": {
+          "type": "video_card",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=350",
+            "badge_text": "LIVE REEL",
+            "title": "Lote de Maquillaje Por $500 pesos",
+            "hashtags": "#maquillajemayoreo #mayoristas #negocios #emprendimiento"
+          }
+        },
+        "video-2": {
+          "type": "video_card",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=350",
+            "badge_text": "@MODABELLE.MX",
+            "title": "Cómo ganar 100 mil pesos a los 20 años",
+            "hashtags": "#mayoreomexico #emprendimiento #cosmeticos #elf"
+          }
+        },
+        "video-3": {
+          "type": "video_card",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=350",
+            "badge_text": "MAYOREO",
+            "title": "Empaca un lote de 10 piezas de ELF con nosotros",
+            "hashtags": "#maquillaje #elfcosmetics #distribuidores #lotes"
+          }
+        }
+      },
+      "block_order": [
+        "video-1",
+        "video-2",
+        "video-3"
+      ],
+      "settings": {
+        "title_number": "180K",
+        "followers_text": "Seguidores en TikTok",
+        "tiktok_username": "@modabelle.mx"
+      }
+    },
+    "references": {
+      "type": "references",
+      "blocks": {
+        "rev-1": {
+          "type": "reference_card",
+          "settings": {
+            "name": "Danna",
+            "stars": "5",
+            "text": "Todo esta increíble y llegan en perfecto estado!! Me encantaron todas las marcas de labiales y sombras de elf.",
+            "image_url": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=150",
+            "role_text": "Compradora Mayorista"
+          }
+        },
+        "rev-2": {
+          "type": "reference_card",
+          "settings": {
+            "name": "Pilc",
+            "stars": "5",
+            "text": "Llegó todo muy bien empacado. Hubo un retraso de un producto pero se entiende por el Hot Sale, excelente atención por WhatsApp.",
+            "image_url": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=150",
+            "role_text": "Compradora Mayorista"
+          }
+        },
+        "rev-3": {
+          "type": "reference_card",
+          "settings": {
+            "name": "Sandra G.",
+            "stars": "5",
+            "text": "Excelente lote de 10 piezas de ELF, ya lo vendí todo en mi ciudad y obtuve más del doble de ganancia. ¡Comprando el siguiente de inmediato!",
+            "image_url": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=150",
+            "role_text": "Empendedora de Belleza"
+          }
+        }
+      },
+      "block_order": [
+        "rev-1",
+        "rev-2",
+        "rev-3"
+      ],
+      "settings": {
+        "badge_text": "Testimonios Reales",
+        "title": "REFERENCIAS DE CLIENTES",
+        "subtitle": "Nuestras compradoras comparten fotos reales de sus paquetes de cosméticos recién desempaquetados."
+      }
     }
   },
   "order": [
-    "featured-collection"
+    "featured-collection",
+    "video-collage",
+    "references"
   ]
 }

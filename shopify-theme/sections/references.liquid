@@ -1,0 +1,170 @@
+<section id="referencias" class="px-6 py-12 max-w-5xl mx-auto space-y-10 font-sans">
+  <div class="text-center space-y-2">
+    <span class="text-[10px] uppercase font-bold tracking-widest text-[#DC9C9B] bg-rose-50 px-3 py-1 rounded inline-block">
+      {{ section.settings.badge_text }}
+    </span>
+    <h3 class="text-2xl font-extrabold text-stone-900 uppercase tracking-tight">
+      {{ section.settings.title }}
+    </h3>
+    <p class="text-xs text-stone-500 max-w-md mx-auto italic font-light">
+      {{ section.settings.subtitle }}
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    {% for block in section.blocks %}
+      {% if block.type == 'reference_card' %}
+        <div class="bg-white p-5 rounded-2xl border border-stone-200/80 shadow-md space-y-4 flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex text-amber-500 gap-0.5">
+              {% assign rating = block.settings.stars | plus: 0 %}
+              {% for i in (1..rating) %}
+                <svg class="h-3.5 w-3.5 fill-current text-amber-500" viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              {% endfor %}
+            </div>
+            <p class="text-xs text-stone-700 italic leading-relaxed font-light">
+              "{{ block.settings.text }}"
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2.5 border-t border-stone-100/80">
+            {% if block.settings.image != blank %}
+              <img
+                src="{{ block.settings.image | image_url: width: 120 }}"
+                alt="{{ block.settings.name | escape }}"
+                class="w-10 h-10 object-cover rounded-full border border-stone-200"
+                loading="lazy"
+              >
+            {% else %}
+              <img
+                src="{{ block.settings.image_url }}"
+                alt="{{ block.settings.name | escape }}"
+                class="w-10 h-10 object-cover rounded-full border border-stone-200"
+                loading="lazy"
+              >
+            {% endif %}
+            <div>
+              <p class="text-xs font-bold text-stone-800">{{ block.settings.name }}</p>
+              <p class="text-[9px] text-[#DC9C9B] font-semibold tracking-wide uppercase">{{ block.settings.role_text }}</p>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Referencias de Clientes",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Etiqueta superior",
+      "default": "Testimonios Reales"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título de la sección",
+      "default": "REFERENCIAS DE CLIENTES"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtítulo / Descripción",
+      "default": "Nuestras compradoras comparten fotos reales de sus paquetes de cosméticos recién desempaquetados."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reference_card",
+      "name": "Tarjeta de Referencia",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre del Cliente",
+          "default": "Danna"
+        },
+        {
+          "type": "select",
+          "id": "stars",
+          "label": "Estrellas (1-5)",
+          "options": [
+            { "value": "1", "label": "1 Estrella" },
+            { "value": "2", "label": "2 Estrellas" },
+            { "value": "3", "label": "3 Estrellas" },
+            { "value": "4", "label": "4 Estrellas" },
+            { "value": "5", "label": "5 Estrellas" }
+          ],
+          "default": "5"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Descripción / Testimonio",
+          "default": "Todo esta increíble y llegan en perfecto estado!! Me encantaron todas las marcas de labiales y sombras de elf."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen del Cliente (Avatar o Unboxing)"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "O usar URL de Imagen (Fallback)",
+          "default": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=150"
+        },
+        {
+          "type": "text",
+          "id": "role_text",
+          "label": "Rol u Ocupación",
+          "default": "Compradora Mayorista"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Referencias de Clientes",
+      "blocks": [
+        {
+          "type": "reference_card",
+          "settings": {
+            "name": "Danna",
+            "stars": "5",
+            "text": "Todo esta increíble y llegan en perfecto estado!! Me encantaron todas las marcas de labiales y sombras de elf.",
+            "image_url": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=150",
+            "role_text": "Compradora Mayorista"
+          }
+        },
+        {
+          "type": "reference_card",
+          "settings": {
+            "name": "Pilc",
+            "stars": "5",
+            "text": "Llegó todo muy bien empacado. Hubo un retraso de un producto pero se entiende por el Hot Sale, excelente atención por WhatsApp.",
+            "image_url": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=150",
+            "role_text": "Compradora Mayorista"
+          }
+        },
+        {
+          "type": "reference_card",
+          "settings": {
+            "name": "Sandra G.",
+            "stars": "5",
+            "text": "Excelente lote de 10 piezas de ELF, ya lo vendí todo en mi ciudad y obtuve más del doble de ganancia. ¡Comprando el siguiente de inmediato!",
+            "image_url": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=150",
+            "role_text": "Empendedora de Belleza"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

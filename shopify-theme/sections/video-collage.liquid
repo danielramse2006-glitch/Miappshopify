@@ -1,0 +1,154 @@
+<section class="bg-[#FAF6F6] border-y border-stone-200/60 py-12 px-6">
+  <div class="max-w-5xl mx-auto space-y-8">
+    <div class="text-center space-y-1">
+      <span class="text-4xl md:text-5xl font-black text-[#DC9C9B] block font-sans leading-none">
+        {{ section.settings.title_number }}
+      </span>
+      <p class="text-xs font-bold text-stone-700 uppercase tracking-widest font-sans">
+        {{ section.settings.followers_text }} <span class="underline">{{ section.settings.tiktok_username }}</span>
+      </p>
+      <div class="w-10 h-0.5 bg-stone-300 mx-auto mt-2"></div>
+    </div>
+
+    <!-- Simulated TikTok Videos Collage Layout -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {% for block in section.blocks %}
+        {% if block.type == 'video_card' %}
+          <div class="bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-md group flex flex-col justify-between">
+            <div class="relative aspect-[3/4] bg-stone-950 flex items-center justify-center overflow-hidden">
+              {% if block.settings.image != blank %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 450 }}"
+                  alt="{{ block.settings.title | escape }}"
+                  class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500 filter brightness-95"
+                  loading="lazy"
+                >
+              {% else %}
+                <img
+                  src="{{ block.settings.image_url }}"
+                  alt="{{ block.settings.title | escape }}"
+                  class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500 filter brightness-95"
+                  loading="lazy"
+                >
+              {% endif %}
+              
+              <div class="absolute inset-0 bg-black/25 flex items-center justify-center group-hover:bg-black/10 transition">
+                <span class="h-12 w-12 rounded-full bg-white/95 text-stone-950 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition duration-300">
+                  <svg class="h-5 w-5 fill-current ml-0.5" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </div>
+              <span class="absolute bottom-3 left-3 {% if block.settings.badge_text == 'LIVE REEL' %}bg-red-600 text-white{% else %}bg-[#DC9C9B] text-stone-950{% endif %} font-mono text-[9px] font-bold px-2 py-0.5 rounded">
+                {{ block.settings.badge_text }}
+              </span>
+            </div>
+            <div class="p-3.5 space-y-1 bg-white">
+              <p class="text-[10px] text-stone-505 font-bold uppercase tracking-wider font-sans">{{ block.settings.title }}</p>
+              <p class="text-xs text-[#DC9C9B] font-mono leading-relaxed line-clamp-1">
+                {{ block.settings.hashtags }}
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TikTok Video Collage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_number",
+      "label": "Número Destacado",
+      "default": "180K"
+    },
+    {
+      "type": "text",
+      "id": "followers_text",
+      "label": "Texto de Seguidores",
+      "default": "Seguidores en TikTok"
+    },
+    {
+      "type": "text",
+      "id": "tiktok_username",
+      "label": "Usuario de TikTok",
+      "default": "@modabelle.mx"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_card",
+      "name": "Video de Tiktok",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen del Reel"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "O usar URL de Imagen (Fallback)",
+          "default": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=350"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Etiqueta / Badge",
+          "default": "LIVE REEL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título del Video",
+          "default": "Lote de Maquillaje Por $500 pesos"
+        },
+        {
+          "type": "text",
+          "id": "hashtags",
+          "label": "Hahstags",
+          "default": "#maquillajemayoreo #mayoristas #negocios #emprendimiento"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TikTok Video Collage",
+      "blocks": [
+        {
+          "type": "video_card",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=350",
+            "badge_text": "LIVE REEL",
+            "title": "Lote de Maquillaje Por $500 pesos",
+            "hashtags": "#maquillajemayoreo #mayoristas #negocios #emprendimiento"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=350",
+            "badge_text": "@MODABELLE.MX",
+            "title": "Cómo ganar 100 mil pesos a los 20 años",
+            "hashtags": "#mayoreomexico #emprendimiento #cosmeticos #elf"
+          }
+        },
+        {
+          "type": "video_card",
+          "settings": {
+            "image_url": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=350",
+            "badge_text": "MAYOREO",
+            "title": "Empaca un lote de 10 piezas de ELF con nosotros",
+            "hashtags": "#maquillaje #elfcosmetics #distribuidores #lotes"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
