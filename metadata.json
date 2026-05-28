@@ -1,0 +1,6 @@
+{
+  "name": "Shopify Theme Editor - ModaBelle MX",
+  "description": "Customize and preview the Horizon Shopify theme for ModaBelle MX, complete with an immersive wholesale cosmetic storefront, video reels, client comments, live countdowns, and real-time settings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
