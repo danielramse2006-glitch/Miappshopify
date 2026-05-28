@@ -1,26 +1,11 @@
 {
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "text": "HOT SALE ENVÍO GRATIS",
-        "show_countdown": true
-      }
-    },
-    "header": {
-      "type": "header",
-      "settings": {}
-    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "title": "Maquillaje",
         "grid_cols": "3"
       }
-    },
-    "footer": {
-      "type": "footer",
-      "settings": {}
     }
   },
   "order": [
