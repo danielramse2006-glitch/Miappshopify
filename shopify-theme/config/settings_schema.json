@@ -1,0 +1,74 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "ModaBelle MX",
+    "theme_version": "1.0.0",
+    "theme_author": "ModaBelle MX Team",
+    "theme_documentation_url": "https://modabelle.mx",
+    "theme_support_url": "https://modabelle.mx"
+  },
+  {
+    "name": "Colores globales",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Color de fondo de página",
+        "default": "#FFF9F8"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Color del texto",
+        "default": "#1C1917"
+      },
+      {
+        "type": "color",
+        "id": "accent_color_1",
+        "label": "Color de acento rosa principal",
+        "default": "#DC9C9B"
+      },
+      {
+        "type": "color",
+        "id": "accent_color_2",
+        "label": "Color de acento secundario arcilla",
+        "default": "#BC6C25"
+      },
+      {
+        "type": "color",
+        "id": "button_bg_color",
+        "label": "Fondo de botones primarios",
+        "default": "#1C1917"
+      },
+      {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Texto de botones primarios",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Configuraciones del Banner Hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hero_title",
+        "label": "Título del Hero",
+        "default": "Descubre precios de maquillaje bajos"
+      },
+      {
+        "type": "textarea",
+        "id": "hero_subtitle",
+        "label": "Subtítulo del Hero",
+        "default": "Muchos otros productos a mayoreo que te harán ganar dinero muy rápido, todo original y con envío express de inmediato."
+      },
+      {
+        "type": "text",
+        "id": "hero_button_text",
+        "label": "Texto del botón",
+        "default": "COMPRAR EN OFERTA"
+      }
+    ]
+  }
+]

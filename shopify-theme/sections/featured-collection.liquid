@@ -1,0 +1,107 @@
+{% style %}
+  .collection-banner {
+    background-color: #FAF6F6;
+  }
+  .product-grid {
+    display: grid;
+    gap: 2rem;
+  }
+{% endstyle %}
+
+<section class="max-w-7xl mx-auto px-6 py-12 font-sans" id="Catalogo">
+  <div class="flex flex-col items-center text-center space-y-2 mb-10">
+    <span class="text-xs font-mono tracking-widest text-[#DC9C9B] uppercase font-bold">ModaBelle MX</span>
+    <h2 class="text-3xl md:text-4xl font-serif text-stone-950 font-bold tracking-tight">{{ section.settings.title }}</h2>
+    <div class="w-12 h-1 bg-[#DC9C9B] rounded mt-2"></div>
+  </div>
+
+  <div class="product-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-{{ section.settings.grid_cols }}">
+    {/* Product Card 1 */}
+    <div class="group bg-white rounded-3xl border border-stone-100 overflow-hidden shadow-xs hover:shadow-lg transition duration-300 flex flex-col justify-between">
+      <div class="aspect-square bg-stone-50 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=600" alt="Lote Maquillaje ELF" class="w-full h-full object-cover group-hover:scale-103 transition duration-500" loading="lazy">
+        <span class="absolute top-4 left-4 bg-rose-500 text-white font-mono text-[9px] font-bold py-1 px-2.5 rounded-full uppercase tracking-wider">¡MÁS VENDIDO!</span>
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 class="font-extrabold text-[#DC9C9B] text-[10px] uppercase tracking-wider font-mono">Lotes ELF Cosmetics</h3>
+        <h4 class="text-lg font-serif font-bold text-stone-950">Lote 10 Piezas ELF</h4>
+        <p class="text-xs text-stone-500 leading-relaxed font-light">Maquillajes 100% Originales surtidos, ideal para revendedoras y emprendedoras de belleza.</p>
+        <div class="flex items-baseline justify-between pt-2">
+          <div>
+            <span class="text-[10px] text-stone-400 block line-through">$3,500.00 MXN</span>
+            <span class="text-xl font-extrabold text-stone-950">$1,450.00 MXN</span>
+          </div>
+          <span class="text-[10px] text-emerald-600 bg-emerald-50 font-bold px-2 py-1 rounded">MAYOREO</span>
+        </div>
+        <button class="w-full py-3 bg-stone-950 hover:bg-[#DC9C9B] text-white hover:text-stone-950 font-bold text-xs uppercase tracking-widest rounded-2xl transition duration-300">Añadir al Carrito</button>
+      </div>
+    </div>
+
+    {/* Product Card 2 */}
+    <div class="group bg-white rounded-3xl border border-stone-100 overflow-hidden shadow-xs hover:shadow-lg transition duration-300 flex flex-col justify-between">
+      <div class="aspect-square bg-stone-50 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&q=80&w=600" alt="Lote Coreano Premium" class="w-full h-full object-cover group-hover:scale-103 transition duration-500" loading="lazy">
+        <span class="absolute top-4 left-4 bg-yellow-500 text-stone-950 font-mono text-[9px] font-bold py-1 px-2.5 rounded-full uppercase tracking-wider">PREMIUM</span>
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 class="font-extrabold text-[#DC9C9B] text-[10px] uppercase tracking-wider font-mono">Lotes Coreanos</h3>
+        <h4 class="text-lg font-serif font-bold text-stone-950">Skincare Coreano 15 Pzs</h4>
+        <p class="text-xs text-stone-500 leading-relaxed font-light">Sets de cremas, sueros e hidratantes coreanos originales de alta rentabilidad.</p>
+        <div class="flex items-baseline justify-between pt-2">
+          <div>
+            <span class="text-[10px] text-stone-400 block line-through">$5,200.00 MXN</span>
+            <span class="text-xl font-extrabold text-stone-950">$2,100.00 MXN</span>
+          </div>
+          <span class="text-[10px] text-emerald-600 bg-emerald-50 font-bold px-2 py-1 rounded">MÁS RENTABLE</span>
+        </div>
+        <button class="w-full py-3 bg-stone-950 hover:bg-[#DC9C9B] text-white hover:text-stone-950 font-bold text-xs uppercase tracking-widest rounded-2xl transition duration-300">Añadir al Carrito</button>
+      </div>
+    </div>
+
+    {/* Product Card 3 */}
+    <div class="group bg-white rounded-3xl border border-stone-100 overflow-hidden shadow-xs hover:shadow-lg transition duration-300 flex flex-col justify-between">
+      <div class="aspect-square bg-stone-50 overflow-hidden relative">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=600" alt="Lote Ropa Dama Mayoreo" class="w-full h-full object-cover group-hover:scale-103 transition duration-500" loading="lazy">
+        <span class="absolute top-4 left-4 bg-[#BC6C25] text-white font-mono text-[9px] font-bold py-1 px-2.5 rounded-full uppercase tracking-wider">OFERTA</span>
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 class="font-extrabold text-[#DC9C9B] text-[10px] uppercase tracking-wider font-mono">Ropa Mayoreo</h3>
+        <h4 class="text-lg font-serif font-bold text-stone-950">Blusas Moda Trendy 12 Pzs</h4>
+        <p class="text-xs text-stone-500 leading-relaxed font-light">Surtido de blusas y prendas de gran demanda con telas de primera calidad.</p>
+        <div class="flex items-baseline justify-between pt-2">
+          <div>
+            <span class="text-[10px] text-stone-400 block line-through">$4,100.00 MXN</span>
+            <span class="text-xl font-extrabold text-stone-950">$1,690.00 MXN</span>
+          </div>
+          <span class="text-[10px] text-emerald-600 bg-emerald-50 font-bold px-2 py-1 rounded">HOT SALE</span>
+        </div>
+        <button class="w-full py-3 bg-stone-950 hover:bg-[#DC9C9B] text-white hover:text-stone-950 font-bold text-xs uppercase tracking-widest rounded-2xl transition duration-300">Añadir al Carrito</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título de la Sección",
+      "default": "Catálogo de Productos"
+    },
+    {
+      "type": "select",
+      "id": "grid_cols",
+      "label": "Columnas en Escritorio",
+      "options": [
+        { "value": "2", "label": "2 Columnas" },
+        { "value": "3", "label": "3 Columnas" },
+        { "value": "4", "label": "4 Columnas" }
+      ],
+      "default": "3"
+    }
+  ]
+}
+{% endschema %}

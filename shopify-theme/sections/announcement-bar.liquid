@@ -1,0 +1,74 @@
+{% style %}
+  .announcement-bar {
+    background-color: {{ section.settings.announcement_bg }};
+    color: {{ section.settings.announcement_text_color }};
+  }
+  .countdown-item {
+    background-color: rgba(0,0,0,0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: bold;
+  }
+{% endstyle %}
+
+{% if section.settings.show_announcement %}
+  <div class="announcement-bar py-3 px-6 text-center text-xs tracking-wider flex flex-col md:flex-row items-center justify-between gap-4 font-sans border-b border-stone-200">
+    <div class="flex items-center gap-2">
+      <span class="font-extrabold uppercase bg-rose-500 text-white text-[10px] px-1.5 py-0.5 rounded animate-pulse">¡HOT!</span>
+      <p class="font-bold uppercase tracking-widest text-[11px]">{{ section.settings.text }}</p>
+    </div>
+
+    {% if section.settings.show_countdown %}
+      <div id="shopify-countdown" class="flex items-center gap-1 text-[11px] font-bold">
+        <span class="mr-1.5 opacity-85">TERMINA EN:</span>
+        <span class="countdown-item">00d</span> :
+        <span class="countdown-item">01h</span> :
+        <span class="countdown-item">17m</span> :
+        <span class="countdown-item">26s</span>
+      </div>
+    {% endif %}
+
+    <div>
+      <a href="#Catalogo" class="font-extrabold uppercase border-b-2 border-current hover:opacity-85 text-[11px]">COMPRAR</a>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Mostrar Banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto del Anuncio",
+      "default": "HOT SALE ENVÍO GRATIS"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_countdown",
+      "label": "Mostrar Cuenta Regresiva",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "announcement_bg",
+      "label": "Fondo del Anuncio",
+      "default": "#DC9C9B"
+    },
+    {
+      "type": "color",
+      "id": "announcement_text_color",
+      "label": "Color de Texto",
+      "default": "#1C1917"
+    }
+  ]
+}
+{% endschema %}

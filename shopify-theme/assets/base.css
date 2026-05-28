@@ -1,0 +1,36 @@
+/* Base configuration and styles for Shopify theme - ModaBelle MX */
+:root {
+  --color-primary: #DC9C9B;
+  --color-dark: #1C1917;
+  --color-bg-page: #FFF9F8;
+  --font-family-serif: "Georgia", Georgia, serif;
+  --font-family-sans: "Inter", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-bg-page);
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-family-serif);
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Interactive transitions */
+a, button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,26 @@
+{% layout none %}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tarjeta de Regalo ModaBelle MX</title>
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body class="bg-[#FAF6F6] text-stone-900 flex items-center justify-center min-h-screen">
+    <div class="max-w-md w-full bg-white p-8 rounded-3xl shadow-xl border border-stone-100 text-center space-y-6">
+      <h1 class="text-3xl font-serif text-stone-950 font-bold tracking-tight">ModaBelle MX</h1>
+      <p class="text-xs font-mono uppercase tracking-widest text-[#DC9C9B]">Tarjeta de Regalo</p>
+      
+      <div class="bg-rose-50/50 rounded-2xl p-6 border border-[#DC9C9B]/20 my-6">
+        <span class="text-3xl font-extrabold text-stone-950 font-mono">{{ gift_card.balance | money }}</span>
+      </div>
+
+      <p class="text-[13px] text-stone-600">Utiliza este código para canjear tu saldo al finalizar tu compra de mayoreo:</p>
+      <div class="bg-stone-50 border border-dashed border-stone-300 rounded-xl py-3 px-4 font-mono font-bold tracking-wider select-all text-sm">
+        {{ gift_card.code | format_code }}
+      </div>
+    </div>
+  </body>
+</html>
